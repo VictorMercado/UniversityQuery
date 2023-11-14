@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>My PHP Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Welcome to my PHP Website!</h1>
