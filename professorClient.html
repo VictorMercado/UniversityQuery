@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Professor Client</title>
+</head>
+<body>
+    <a href="/">Back to home</a>
+
+    <h1>Professor Client</h1>
+
+    <div class="form-container">
+      <div>
+        <h2>Enter your SSN to view your classes</h2>
+        <form action="professor.php" method="post">
+            <label for="professorSSN">Professor's SSN:</label>
+            <input type="text" id="professorSSN" name="professorSSN" required>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="form-container">
+      <div>
+        <h2>Enter Course Number and Section Number to view grades</h2>
+        <form action="course.php" method="post">
+            <label for="CourseNo">Course Number:</label>
+            <input type="text" id="CourseNo" name="CourseNo" required>
+            <label for="SectionNo">Section Number:</label>
+            <input type="text" id="SectionNo" name="SectionNo" required>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+</body>
+</html>
