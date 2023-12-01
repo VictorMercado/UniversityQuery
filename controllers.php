@@ -64,11 +64,27 @@ function countGradesForSection($courseNumber, $sectionNumber) {
 
     $result = $conn->query($sql);
 
+    $sql = "SELECT Title
+            FROM Course
+            WHERE CourseID = $courseNumber";
+    $courseTitle = $conn->query($sql);
+
     // Check if there are results
     if ($result->num_rows > 0) {
         // Output data for each row
+        $title = $courseTitle->fetch_assoc();
+        echo "<h2>Course Title: {$title["Title"]}</h2>";
+        echo "<table border='1'>
+                <tr>
+                    <th>Grade</th>
+                    <th>Count</th>
+                </tr>";
         while ($row = $result->fetch_assoc()) {
-            echo "Grade: " . $row["Grade"] . " Count: " . $row["Count"] . "<br>";
+            echo "<tr>
+                    <td>{$row["Grade"]}</td>
+                    <td>{$row["Count"]}</td>
+                </tr>";
+            // echo "Grade: " . $row["Grade"] . " Count: " . $row["Count"] . "<br>";
         }
     } else {
         echo "No grades found for Course $courseNumber, Section $sectionNumber";
